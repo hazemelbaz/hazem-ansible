@@ -1,0 +1,13 @@
+---
+- hosts: all
+ become: yes
+  - ping: ~
+  - name: Update APT packges manager reposotiroies cache
+   become: true
+   apt: 
+    update_cache: yes
+  - name: Upgrade installed packeges
+   become: true
+   apt:
+    upgrade: dist
+    
